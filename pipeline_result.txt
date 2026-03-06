@@ -1,0 +1,22 @@
+Missing Python executable 'python3', defaulting to 'C:\Users\rohan\AppData\Local\Programs\Python\Python313\Lib\site-packages\pyspark\bin\..' for SPARK_HOME environment variable. Please install Python or specify the correct Python executable in PYSPARK_DRIVER_PYTHON or PYSPARK_PYTHON environment variable to detect SPARK_HOME safely.
+WARNING: Using incubator modules: jdk.incubator.vector
+26/03/06 09:10:54 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/03/06 09:10:56 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[Stage 0:>                                                         (0 + 0) / 10][Stage 0:>                                                        (0 + 10) / 10]                                                                                Initializing Spark Session for scale: million...
+Generating 500000 records with 10 partitions...
+Converting to Pandas and writing to local CSV: synthetic_weather_output_million.csv...
+Successfully generated and saved 500000 records!
+
+Sample Data for AI Training:
+   id  weather_station_id                  timestamp  temp_celsius  humidity_percent  wind_speed_kmh  precipitation_mm  pressure_hpa  is_extreme_weather
+0   0                9649 2026-03-06 09:11:07.518562         20.95             64.83           14.44               0.0       1013.32               False
+1   1                3340 2026-03-06 09:10:07.518562         48.03             80.00            8.69               0.0        999.47                True
+2   2                 637 2026-03-06 09:09:07.518562         36.52             84.10           17.17               0.0       1023.16               False
+3   3                5193 2026-03-06 09:08:07.518562         21.96             43.65           30.84               0.0       1011.89               False
+4   4                7882 2026-03-06 09:07:07.518562         37.89             68.51           13.98               0.0       1014.56               False
+SUCCESS: The process with PID 40896 (child process of PID 36552) has been terminated.
+SUCCESS: The process with PID 36552 (child process of PID 25536) has been terminated.
+SUCCESS: The process with PID 25536 (child process of PID 44588) has been terminated.

@@ -1,0 +1,225 @@
+﻿Missing Python executable 'python3', defaulting to 'C:\Users\rohan\AppData\Local\Programs\Python\Python313\Lib\site-packages\pyspark\bin\..' for SPARK_HOME environment variable. Please install Python or specify the correct Python executable in PYSPARK_DRIVER_PYTHON or PYSPARK_PYTHON environment variable to detect SPARK_HOME safely.
+py : WARNING: Using 
+incubator modules: 
+jdk.incubator.vector
+At line:1 char:1
++ py synthetic_weather_pipeli
+ne.py 2>&1 | Out-File 
+-FilePath pipeline_r ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (WARNING  
+  : Using ...ncubator.vect   
+ or:String) [], RemoteExc    
+eption
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+26/03/06 09:08:03 WARN 
+Shell: Did not find 
+winutils.exe: java.io.FileNot
+FoundException: java.io.FileN
+otFoundException: 
+HADOOP_HOME and 
+hadoop.home.dir are unset. 
+-see https://cwiki.apache.org
+/confluence/display/HADOOP2/W
+indowsProblems
+Using Spark's default log4j 
+profile: org/apache/spark/log
+4j2-defaults.properties
+Setting default log level to 
+"WARN".
+To adjust logging level use 
+sc.setLogLevel(newLevel). 
+For SparkR, use 
+setLogLevel(newLevel).
+26/03/06 09:08:05 WARN 
+NativeCodeLoader: Unable to 
+load native-hadoop library 
+for your platform... using 
+builtin-java classes where 
+applicable
+26/03/06 09:08:15 WARN 
+FileSystem: Failed to 
+initialize filesystem hdfs://
+/data/weather_synthetic/targe
+t_scale=million: 
+java.io.IOException: 
+Incomplete HDFS URI, no 
+host: hdfs:///data/weather_sy
+nthetic/target_scale=million
+Initializing Spark Session for scale: million...
+Generating 50000000 records with 200 partitions...
+Writing data to HDFS: hdfs:///data/weather_synthetic/target_scale=million
+Traceback (most recent call 
+last):
+  File "C:\Users\rohan\OneDri
+ve\Desktop\Python\synthetic_w
+eather_pipeline.py", line 
+108, in <module>
+    main(scale_arg)
+    ~~~~^^^^^^^^^^^
+  File "C:\Users\rohan\OneDri
+ve\Desktop\Python\synthetic_w
+eather_pipeline.py", line 
+63, in main
+    
+.parquet(hdfs_output_path)
+     
+~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rohan\AppDat
+a\Local\Programs\Python\Pytho
+n313\Lib\site-packages\pyspar
+k\sql\readwriter.py", line 
+2003, in parquet
+    
+self._jwrite.parquet(path)
+    
+~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\rohan\AppDat
+a\Local\Programs\Python\Pytho
+n313\Lib\site-packages\py4j\j
+ava_gateway.py", line 1362, 
+in __call__
+    return_value = 
+get_return_value(
+        answer, 
+self.gateway_client, 
+self.target_id, self.name)
+  File "C:\Users\rohan\AppDat
+a\Local\Programs\Python\Pytho
+n313\Lib\site-packages\pyspar
+k\errors\exceptions\captured.
+py", line 263, in deco
+    return f(*a, **kw)
+  File "C:\Users\rohan\AppDat
+a\Local\Programs\Python\Pytho
+n313\Lib\site-packages\py4j\p
+rotocol.py", line 327, in 
+get_return_value
+    raise Py4JJavaError(
+        "An error occurred 
+while calling {0}{1}{2}.\n".
+        format(target_id, 
+".", name), value)
+py4j.protocol.Py4JJavaError: 
+An error occurred while 
+calling o92.parquet.
+: java.io.IOException: 
+Incomplete HDFS URI, no 
+host: hdfs:///data/weather_sy
+nthetic/target_scale=million
+
+	at org.apache.hadoop.hdfs.Di
+stributedFileSystem.initializ
+e(DistributedFileSystem.java:
+187)
+
+	at org.apache.hadoop.fs.File
+System.createFileSystem(FileS
+ystem.java:3615)
+
+	at org.apache.hadoop.fs.File
+System.access$300(FileSystem.
+java:172)
+
+	at org.apache.hadoop.fs.File
+System$Cache.getInternal(File
+System.java:3716)
+
+	at org.apache.hadoop.fs.File
+System$Cache.get(FileSystem.j
+ava:3667)
+
+	at org.apache.hadoop.fs.File
+System.get(FileSystem.java:55
+7)
+
+	at org.apache.hadoop.fs.Path
+.getFileSystem(Path.java:366)
+
+	at org.apache.spark.sql.exec
+ution.datasources.DataSource.
+makeQualified(DataSource.scal
+a:128)
+
+	at org.apache.spark.sql.exec
+ution.datasources.DataSource.
+planForWritingFileFormat(Data
+Source.scala:471)
+
+	at org.apache.spark.sql.exec
+ution.datasources.DataSource.
+planForWriting(DataSource.sca
+la:559)
+
+	at org.apache.spark.sql.clas
+sic.DataFrameWriter.saveToV1S
+ourceCommand(DataFrameWriter.
+scala:273)
+
+	at org.apache.spark.sql.clas
+sic.DataFrameWriter.saveComma
+nd(DataFrameWriter.scala:242)
+
+	at org.apache.spark.sql.clas
+sic.DataFrameWriter.save(Data
+FrameWriter.scala:115)
+
+	at org.apache.spark.sql.Data
+FrameWriter.parquet(DataFrame
+Writer.scala:369)
+
+	at java.base/jdk.internal.re
+flect.NativeMethodAccessorImp
+l.invoke0(Native Method)
+
+	at java.base/jdk.internal.re
+flect.NativeMethodAccessorImp
+l.invoke(NativeMethodAccessor
+Impl.java:75)
+
+	at java.base/jdk.internal.re
+flect.DelegatingMethodAccesso
+rImpl.invoke(DelegatingMethod
+AccessorImpl.java:52)
+
+	at java.base/java.lang.refle
+ct.Method.invoke(Method.java:
+580)
+
+	at py4j.reflection.MethodInv
+oker.invoke(MethodInvoker.jav
+a:244)
+
+	at py4j.reflection.Reflectio
+nEngine.invoke(ReflectionEngi
+ne.java:374)
+
+	at py4j.Gateway.invoke(Gatew
+ay.java:282)
+
+	at py4j.commands.AbstractCom
+mand.invokeMethod(AbstractCom
+mand.java:132)
+
+	at py4j.commands.CallCommand
+.execute(CallCommand.java:79)
+
+	at py4j.ClientServerConnecti
+on.waitForCommands(ClientServ
+erConnection.java:184)
+
+	at py4j.ClientServerConnecti
+on.run(ClientServerConnection
+.java:108)
+
+	at java.base/java.lang.Threa
+d.run(Thread.java:1583)
+
+
+SUCCESS: The process with PID 24020 (child process of PID 18940) has been terminated.
+SUCCESS: The process with PID 18940 (child process of PID 27680) has been terminated.
+SUCCESS: The process with PID 27680 (child process of PID 34980) has been terminated.

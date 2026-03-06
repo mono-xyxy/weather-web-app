@@ -1,0 +1,24 @@
+﻿py : Traceback (most recent 
+call last):
+At line:1 char:1
++ py synthetic_weather_pipeli
+ne.py 2>&1 | Out-File 
+-FilePath pipeline_r ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (Traceba  
+  ck (most recent call las   
+ t)::String) [], RemoteEx    
+ception
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+  File "C:\Users\rohan\OneDri
+ve\Desktop\Python\synthetic_w
+eather_pipeline.py", line 1, 
+in <module>
+    from pyspark.sql import 
+SparkSession
+ModuleNotFoundError: No 
+module named 'pyspark'
