@@ -78,3 +78,5 @@ The User Interface isn't static! It includes an **Autochromatic Engine** that in
 ---
 
 *Architected by Advanced Agentic UI Synthesis.*
+## Open meteo API
+https://open-meteo.com/en/forecast-api
