@@ -15,18 +15,19 @@ app = Flask(__name__)
 models = {}
 metrics = {}
 
-CSV_PATH = "C:/Users/rohan/OneDrive/Desktop/Python/synthetic_weather_output_million.csv"
+CSV_PATH = os.path.join(os.path.dirname(__file__), "synthetic_weather_output_million.csv")
 
 def train_models():
-    print("Initializing AI Model Training...")
+    print("Initializing AI Model Training for Serverless...")
     try:
         df = pd.read_csv(CSV_PATH)
     except FileNotFoundError:
         print("Error: Dataset not found!")
         return
 
-    if len(df) > 50000:
-        df = df.sample(50000, random_state=42)
+    # Optimized to 10k rows specifically to prevent Vercel Free Tier 10s Serverless timeout limits
+    if len(df) > 10000:
+        df = df.sample(10000, random_state=42)
         
     df['timestamp'] = pd.to_datetime(df['timestamp'])
     
@@ -692,7 +693,9 @@ def verify():
 
     return jsonify({"ai": ai_res, "real": real_res})
 
+# Initialize ML array directly in cloud memory space
+train_models()
+
 if __name__ == '__main__':
-    train_models()
     print("Verification Dashboard online: http://127.0.0.1:5000")
     app.run(port=5000, debug=False)
